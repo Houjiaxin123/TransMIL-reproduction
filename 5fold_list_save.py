@@ -2,8 +2,8 @@ from sklearn.model_selection import KFold
 import numpy as np
 import csv
 
-file_path = 'F:/CAMELYON16/training/CLAM_SEG_20X/process_list_autogen.csv'
-split_file_path = 'C:/Users/12sigma/PycharmProjects/pythonProject1/dataset_csv/camelyon16/split_result.csv'
+file_path = './process_list_autogen.csv'
+split_file_path = './split_result.csv'
 data_list = []
 
 with open(file_path) as f:
@@ -21,7 +21,8 @@ for train_indexs, test_indexs in kf.split(data_list):
         train_case_list.append(data_list[train_index])
     for test_index in test_indexs:
         test_case_list.append(data_list[test_index])
-    with open(split_file_path, 'a') as file:
+    rows = zip(train_case_list, test_case_list)
+    with open(split_file_path, 'a', newline='') as file:
         result = csv.writer(file)
-        result.writerow(train_case_list)
-        result.writerow(test_case_list)
+        for row in rows:
+            result.writerow(row)
