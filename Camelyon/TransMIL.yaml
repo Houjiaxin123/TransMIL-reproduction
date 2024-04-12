@@ -16,9 +16,9 @@ General:
 Data:
     dataset_name: camel_data
     data_shuffle: False
-    data_dir: Camelyon16/pt_files/
-    label_dir: dataset_csv/camelyon16/
-    fold: 0
+    data_dir: Camelyon16/pt_files/ ##CLAM提取的特征的保存地址
+    label_dir: dataset_csv/camelyon16/  ##保存的随机5折划分CSV文件中有标签
+    fold: 0 ##设置当前用第几折划分结果实验
     nfold: 4
 
     train_dataloader:
@@ -31,7 +31,7 @@ Data:
 
 Model:
     name: TransMIL
-    n_classes: 2
+    n_classes: 2  ##camelyon16数据集任务为2分类任务，normal or tumor
 
 
 Optimizer:
