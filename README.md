@@ -16,10 +16,6 @@ CLAM预处理，前景背景分割，ResNet50提取patch特征，每张图像保
 - NVIDIA GPU (Tested on a single Nvidia GeForce GTX 1080 Ti)
 - Python (3.8.18), h5py (3.10.0), opencv-python (4.2.0.34), PyTorch (2.2.1), torchvision (0.17.1+cu118), pytorch-lightning (1.2.3).
 
-### Train
-
-### Test
-
 ## Reference
 
 - If you found our work useful in your research, please consider citing our works(s) at:
