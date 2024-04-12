@@ -39,3 +39,16 @@ models/model_interface.py
 - 1.class ModelInterface中def __init__，调用trochmetrics计算指标，添加参数task = 'multiclass'或task = 'binary'.
 - 2.def test_epoch_end,修改为auc = self.AUROC(max_probs, target.squeeze())
 - 3.环境中不需要omegaconf 2.2.3。
+
+## Results
+数据直接用CLAM预处理，无其他操作，camelyon16结果。    
+
+| fold | test_BinaryAccuracy | test_BinaryCohenKappa | test_BinaryF1Score | test_BinaryRecall | test_BinaryPrecision | auc | 
+| :-----:| :----: | :----: | :----: | :----: | :----: | :----: |
+| 0 | 0.822 | 0.587 | 0.701 | 0.551 | 0.964 | 0.769 |
+| 1 | 0.845 | 0.663 | 0.783 | 0.735 | 0.837 | 0.824 |
+| 2 | 0.806 | 0.566 | 0.706 | 0.612 | 0.833 | 0.769 |
+| 3 | 0.798 | 0.555 | 0.705 | 0.633 | 0.795 | 0.766 |
+| 4 | 0.853 | 0.673 | 0.782 | 0.694 | 0.895 | 0.822 |
+| ave | 0.825 | 0.609 | 0.735 | 0.645 | 0.865 | 0.790 |
+
