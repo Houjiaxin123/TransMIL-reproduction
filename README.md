@@ -1,10 +1,5 @@
 # TransMIL: [NeurIPS 2021]
 
-<details>
-<summary>
-    <b>TransMIL: Transformer based Correlated Multiple Instance Learning for Whole Slide Image Classification</b>. <a href="https://proceedings.neurips.cc/paper/2021/file/10c272d06794d3e5785d5e7c5356e9ff-Paper.pdf" target="blank">[NeurIPS2021]</a>
-</summary>
-
 ## Data Preprocess
 
 we follow the CLAM's WSI processing solution (https://github.com/mahmoodlab/CLAM)
@@ -37,3 +32,9 @@ CLAM预处理，前景背景分割，ResNet50提取patch特征，每张图像保
 ```
 
 © This code is made available under the GPLv3 License and is available for non-commercial academic purposes.
+
+修改：
+models/model_interface.py
+1.class ModelInterface中def __init__，调用trochmetrics计算指标，添加参数task = 'multiclass'或task = 'binary'.
+2.def test_epoch_end,修改为auc = self.AUROC(max_probs, target.squeeze())
+
