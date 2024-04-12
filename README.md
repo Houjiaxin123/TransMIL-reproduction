@@ -4,8 +4,8 @@
 
 we follow the CLAM's WSI processing solution (https://github.com/mahmoodlab/CLAM)
 
-CLAM预处理，前景背景分割，ResNet50提取patch特征，每张图像保存为一个.pt文件。
-利用生成的csv列表，训练集随机划分5折（训练集和验证集），测试集固定不变，保存划分结果至dataset_csv/camelyon16。
+- CLAM预处理，前景背景分割，ResNet50提取patch特征，每张图像保存为一个.pt文件。
+- 利用生成的csv列表，训练集随机划分5折（训练集和验证集），测试集固定不变，保存划分结果至dataset_csv/camelyon16。
 
 ## Installation
 
@@ -36,6 +36,6 @@ CLAM预处理，前景背景分割，ResNet50提取patch特征，每张图像保
 ## Modification
 修改：
 models/model_interface.py
-1.class ModelInterface中def __init__，调用trochmetrics计算指标，添加参数task = 'multiclass'或task = 'binary'.
-2.def test_epoch_end,修改为auc = self.AUROC(max_probs, target.squeeze())
+- 1.class ModelInterface中def __init__，调用trochmetrics计算指标，添加参数task = 'multiclass'或task = 'binary'.
+- 2.def test_epoch_end,修改为auc = self.AUROC(max_probs, target.squeeze())
 
