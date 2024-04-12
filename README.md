@@ -8,7 +8,9 @@
 ## Data Preprocess
 
 we follow the CLAM's WSI processing solution (https://github.com/mahmoodlab/CLAM)
+
 CLAM预处理，前景背景分割，ResNet50提取patch特征，每张图像保存为一个.pt文件。
+利用生成的csv列表，训练集随机划分5折（训练集和验证集），测试集固定不变，保存划分结果至dataset_csv/camelyon16。
 
 ## Installation
 
